@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="utf-8">
+    <title>Das Handtuchmodell</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css?v=101021">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+        integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="scripts.js?v=101021"></script>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    <img src="https://uni-freiburg.de/wp-content/themes/unifreiburg-theme/img/favicons/favicon.svg"
+                        alt="" height="24" class="d-inline-block align-text-top" id="logo">
+                    Praktikum Physiologie
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">EKG: Das Handtuchmodell</a>
+                        </li>
+                    </ul>
+                </div>
+                <form class="d-flex">
+                    <button class="btn btn-outline-light" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasHelp">
+                        <i class="bi-info-circle"></i> Erkl&auml;rungen
+                    </button>
+                </form>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasHelp">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasExampleLabel">Das Handtuchmodell</h5>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <p>
+                    Dieser Versuch demonstriert die Grundlagen der vektoriellen Analyse des EKG-Signals an einem einfachen
+                    Modell: Ein mit einer Salzl&ouml;sung angefeuchtetes Handtuch soll das leitende K&ouml;rpergewebe simulieren. In der
+                    Handtuchmitte wird mit einer Spannungsquelle ein elektrischer Dipol generiert. Mit Hilfe der an ein
+                    Spannungsmesser (Oszilloskop) angeschlossenen &quot;EKG-Elektroden&quot; A, B und C kann das erzeugte
+                    elektrische Feld gemessen werden. Jedes Paar von Elektroden definiert eine Ableitungsrichtung, die
+                    entsprechend auf dem
+                    Oszilloskop dargestellt wird. F&uuml;r weitere theoretische Grundlagen wird hier auf das Arbeitsheft
+                    zum Physiologischen Praktikum verwiesen.
+                </p>
+                <p class="h5">Tipps zur Benutzung</p>
+                <ul class="d-grid gap-3 my-7 list-unstyled">
+                    <li class="d-flex gap-3">
+                        <i class="bi-hand-index ms-3" style="font-size: 1.8rem"></i>
+                        <div>
+                            <h6 class="mb-0">Messfeld ver&auml;ndern</h6>
+                            Die EKG-Elektroden sowie die Pole der Stromquelle k&ouml;nnen frei auf der Fl&auml;che des
+                            Handtuchs bewegt werden. &Uuml;bung: Positioniere die EKG-Elektroden so, dass die
+                            Ableitungsrichtungen denen der Standardableitungen (I, II, aVF, ...) des EKGs entsprechen.
+                        </div>
+                    </li>
+                    <li class="d-flex gap-3">
+                        <i class="bi-geo-alt ms-3" style="font-size: 1.8rem"></i>
+                        <div>
+                            <h6 class="mb-0">Dipol-Vektor konstruieren</h6>
+                            Sind mindestens 2 Projektionen des Dipols-Vektors bekannt, lassen sich (vorausgesetzt, die
+                            Ableitungsrichtungen sind nicht parallel zueinander) Gr&ouml;ße und Richtung des
+                            Dipol-Vektors ohne
+                            Weiteres konstruieren. Nat&uuml;rlich kann auch auf die dritte Projektion geschlossen
+                            werden. Ist die Position eines Pols bekannt/gesetzt, kann somit auch die Position des
+                            anderen Pols konstruiert werden.
+                        </div>
+                    </li>
+                    <li class="d-flex gap-3">
+                        <i class="bi-eye ms-3" style="font-size: 1.8rem"></i>
+                        <div>
+                            <h6 class="mb-0">Komponenten anzeigen/verstecken</h6>
+                            Alle Komponenten auf dem Handtuch können mit einem Klick sichtbar/unsichtbar gemacht werden.
+                            Ihre Position &auml;ndert sich dadurch nicht. &Uuml;bung: Verstecke alle Komponenten außer
+                            den Projektionen des Dipol-Vektors. Platziere den Plus-Pol zufällig mit dem Button <span
+                                class="badge bg-primary">Plus-Pol zufällig plazieren</span>. Probiere nun, auf die Größe
+                            und Richtung des Dipol-Vektors zu schließen.
+                        </div>
+                    </li>
+                </ul>
+                <p class="h5">Gestaltung und &copy;</p>
+                <p>
+                    Diese Seite wurde gestaltet von
+                <ul class="list">
+                    <li>Pierre Kreins*,</li>
+                    <li>Astrid Kollewe* und</li>
+                    <li>Gerd Zolles*,</li>
+                </ul>
+                <ul class="list-unstyled">
+                    <li>*Physiologisches Institut Freiburg, Abteilung Physiologie II.</li>
+                </ul>
+                in Anlehnung an das Skript zum Physiologischen Praktikum. Diese Seite sowie das Skript sind durch
+                Urheberrechte gesch&uuml;tzt. Eine Verfielf&auml;ltigung ist nicht erlaubt.
+                </p>
+            </div>
+        </div>
+        <div class="container-xxl overflow-hidden py-3">
+            <div class="row p-0">
+                <div class="alert alert-primary alert-dismissible fade show" role="alert">
+                    <strong><i class="bi-hand-index-fill"></i> Interaktiv: </strong> Bewege die Pole der Spannungsquelle
+                    sowie die EKG-Elektroden
+                    &uuml;ber das Handtuch, um das E-Feld und die Mess-Ableitungen zu ver&auml;ndern.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div>
+            </div>
+            <div class="row g-3">
+                <div class="col-lg-10">
+                    <div id="screen" class="ratio ratio-16x9">
+                        <canvas id="mainCanvas"></canvas>
+                        <img src="electrodeB.svg" id="electrode1" class="drag-image electrode"
+                            title="EKG-Elektrode B" />
+                        <img src="electrodeA.svg" id="electrode2" class="drag-image electrode"
+                            title="EKG-Elektrode A" />
+                        <img src="electrodeC.svg" id="electrode3" class="drag-image electrode"
+                            title="EKG-Elektrode C" />
+                        <img src="plus.svg" id="plus" class="drag-image source" title="Plus-Pol der Stromquelle" />
+                        <img src="minus.svg" id="minus" class="drag-image source" title="Minus-Pol der Stromquelle" />
+                    </div>
+
+                </div>
+                <div class="col-lg-2">
+                    <div class="row p-1">
+                        <div class="card p-0">
+                            <div class="card-header">
+                                <i class="bi-eye"></i> Zeigen:
+                            </div>
+                            <div class="card-body">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="vector"
+                                        onclick="updateCanvas()">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">Dipol-Vektor</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="projections"
+                                        onclick="updateCanvas()">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">Projektionen</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="guidelines"
+                                        onclick="updateCanvas()">
+                                    <label class="form-check-label" for="flexSwitchCheckDefault">Hilfslinien</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="sources" checked
+                                        onclick="toggleSourceVisibility()">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Stromquelle</label>
+                                </div>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="cabrera" 
+                                        onclick="updateCanvas()">
+                                    <label class="form-check-label" for="flexSwitchCheckChecked">Cabrerakreis</label>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row p-1">
+                        <div class="card p-0">
+                            <div class="card-header">
+                                <i class="bi-lightning-charge"></i> Stromquelle:
+                            </div>
+                            <div class="card-body">
+                                <input type="radio" class="btn-check" name="powerButton" id="onButton" value="on">
+                                <label class="btn btn-outline-success btn-sm" for="onButton">An</label>
+                                <input type="radio" class="btn-check" name="powerButton" id="offButton" value="off"
+                                    checked>
+                                <label class="btn btn-outline-danger btn-sm" for="offButton">Aus</label>
+                                <hr>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="radioBoxDc"
+                                        name="currentRadioGroup" value="dc" checked>
+                                    <label class="form-check-label" for="radioBoxDc">
+                                        Gleichspannung
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="radioBoxSinus"
+                                        name="currentRadioGroup" value="sinus">
+                                    <label class="form-check-label" for="radioBoxSinus">
+                                        Sinuswelle
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" id="radioBoxSquare"
+                                        name="currentRadioGroup" value="square">
+                                    <label class="form-check-label" for="radioBoxSquare">
+                                        Rechteckpulse
+                                    </label>
+                                </div>
+                                <hr>
+                                <label for="voltageRange" class="form-label">Ausgangsspannung:</label>
+                                <input type="range" class="form-range" value="1" min="0" max="3" step="0.1"
+                                    id="voltageRange">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row gy-3 p-0 mt-2">
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="bi-rulers"></i> geometrische Projektionen des Dipol-Vektors messen:
+                        </div>
+                        <div class="card-body">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Ableitung&nbsp;<span
+                                        class="badge rounded-pill ableitungI">A <i class="bi-arrow-right"></i>
+                                        B</span></span>
+                                <input type="text" class="form-control" id="text1" readonly>
+                                <span class="input-group-text">mm</span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Ableitung&nbsp;<span
+                                        class="badge rounded-pill ableitungII">A <i class="bi-arrow-right"></i>
+                                        C</span></span>
+                                <input type="text" class="form-control" id="text2" readonly>
+                                <span class="input-group-text">mm</span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <span class="input-group-text">Ableitung&nbsp;<span
+                                        class="badge rounded-pill ableitungIII">B <i class="bi-arrow-right"></i>
+                                        C</span></span>
+                                <input type="text" class="form-control" id="text3" readonly>
+                                <span class="input-group-text">mm</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card mt-3">
+                        <div class="card-header">
+                            <i class="bi-geo-alt"></i> Pole der Stromquelle konstruieren:
+                        </div>
+                        <div class="card-body">
+                            <p>Zielgrößen für die Projektionen des Dipol-Vektors:</p>
+                            <div class="input-group mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" id="abltSelector0" data-selected="0">Ableitung&nbsp;<span
+                                        class="badge rounded-pill ableitungI">A <i class="bi-arrow-right"></i>
+                                        B</span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item abltSelect" id="abltSelect00">Ableitung&nbsp;<span
+                                                class="badge rounded-pill ableitungI">A <i class="bi-arrow-right"></i>
+                                                B</span></a></li>
+                                    <li><a class="dropdown-item abltSelect" id="abltSelect01">Ableitung&nbsp;<span
+                                                class=" badge rounded-pill ableitungII">A <i class="bi-arrow-right"></i>
+                                                C</span></a></li>
+                                    <li><a class="dropdown-item abltSelect" id="abltSelect02">Ableitung&nbsp;<span
+                                                class="badge rounded-pill ableitungIII">B <i class="bi-arrow-right"></i>
+                                                C</span></a></li>
+                                </ul>
+                                <input type="number" class="form-control" id="derivative1">
+                                <span class="input-group-text">mm</span>
+                            </div>
+                            <div class="input-group mb-3">
+                                <button class="btn btn-outline-secondary dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown" id="abltSelector1" data-selected="1">Ableitung&nbsp;<span
+                                        class="badge rounded-pill ableitungII">A <i class="bi-arrow-right"></i>
+                                        C</span></button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item abltSelect" id="abltSelect10">Ableitung&nbsp;<span
+                                                class="badge rounded-pill ableitungI">A <i class="bi-arrow-right"></i>
+                                                B</span></a></li>
+                                    <li><a class="dropdown-item abltSelect" id="abltSelect11">Ableitung&nbsp;<span
+                                                class=" badge rounded-pill ableitungII">A <i class="bi-arrow-right"></i>
+                                                C</span></a></li>
+                                    <li><a class="dropdown-item abltSelect" id="abltSelect12">Ableitung&nbsp;<span
+                                                class="badge rounded-pill ableitungIII">B <i class="bi-arrow-right"></i>
+                                                C</span></a></li>
+                                </ul>
+                                <input type="number" class="form-control" id="derivative2">
+                                <span class="input-group-text">mm</span>
+                            </div>
+                            <div class="btn-group" role="group">
+                                <button type="button" class="btn btn-primary"
+                                    onclick="placeSource($('#plus'), $('#minus'))"><i class="bi-plus-circle"></i>
+                                    Plus-Pol plazieren</button>
+                                <button type="button" class="btn btn-primary"
+                                    onclick="placeSource($('#minus'), $('#plus'))"><i class="bi-dash-circle"></i>
+                                    Minus-Pol plazieren</button>
+                            </div>
+                            <hr>
+                            <button type="button" class="btn btn-primary" onclick="placeRandomly()"><i
+                                    class="bi-shuffle"></i> Plus-Pol
+                                zufällig plazieren</button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-lg-6">
+                    <div class="card">
+                        <div class="card-header">
+                            <i class="bi-speedometer2"></i> Oszilloskop (Spannungsmesser/&quot;EKG-Ger&auml;t&quot;):
+                        </div>
+                        <div class="card-body">
+                            <div id="oscilloCase">
+                                <div id="oscillo" class="ratio ratio-4x3">
+                                    <canvas id="oscilloCanvas"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <div class="modal fade" id="mainModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mainModalTitle">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body" id="mainModalBody">Modal body
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer mt-auto py-3 bg-light">
+        <div class="d-flex justify-content-center">
+            <span class="text-muted">&copy 2021 <a class="link-dark text-decoration-none"
+                    href="https://www.physiologie.uni-freiburg.de">Institut für Physiologie</a>,
+                Albert-Ludwigs-Universität Freiburg.</span>
+        </div>
+    </footer>
+</body>
+
+</html>

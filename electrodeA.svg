@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   width="187.67569mm"
+   height="171.35886mm"
+   viewBox="0 0 187.67569 171.35886"
+   version="1.1"
+   id="svg5">
+  <metadata
+     id="metadata841">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs2" />
+  <g
+     id="layer1"
+     transform="translate(-1.405954,-31.005983)">
+    <path
+       id="path676"
+       style="fill:#a8a8a8;fill-opacity:1;stroke:#000000;stroke-width:1.78133;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:3.00332"
+       transform="matrix(-0.47217812,0.44279255,-0.0832569,-0.08878218,200.12199,77.086164)"
+       d="m 53.666292,541.13498 -1.229813,-348.12078 98.195091,56.23138 203.90125,116.76396 -150.43326,87.56272 -50.61543,29.46173 -0.80851,0.47061 c -33.00311,19.21013 -66.006219,38.42025 -99.009328,57.63038 z" />
+    <path
+       id="path449"
+       style="fill:#ee4c5c;fill-opacity:1;stroke:#000000;stroke-width:0.292567;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 181.34575,81.005985 c 0,27.533455 -22.32027,49.853715 -49.85373,49.853715 -13.76672,0 -26.23014,-5.58007 -35.251892,-14.60182 -9.021746,-9.02174 -14.601813,-21.485173 -14.601815,-35.251895 -3e-6,-27.533447 22.320257,-49.853715 49.853707,-49.853718 27.53346,-2e-6 49.85373,22.320268 49.85373,49.853718 z" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:77.6111px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.222334"
+       x="101.29148"
+       y="109.26471"
+       id="text31866"
+       transform="scale(1.0005569,0.9994434)"><tspan
+         id="tspan31864"
+         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:77.6111px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Bold';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;stroke-width:0.222334"
+         x="101.29148"
+         y="109.26471">A</tspan></text>
+  </g>
+</svg>
