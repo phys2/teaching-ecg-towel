@@ -19,6 +19,14 @@
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
     <script src="scripts.js?v=101021"></script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#004a99">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="theme-color" content="#ffffff">
 </head>
 
 <body>
@@ -54,10 +62,13 @@
             </div>
             <div class="offcanvas-body">
                 <p>
-                    Dieser Versuch demonstriert die Grundlagen der vektoriellen Analyse des EKG-Signals an einem einfachen
-                    Modell: Ein mit einer Salzl&ouml;sung angefeuchtetes Handtuch soll das leitende K&ouml;rpergewebe simulieren. In der
+                    Dieser Versuch demonstriert die Grundlagen der vektoriellen Analyse des EKG-Signals an einem
+                    einfachen
+                    Modell: Ein mit einer Salzl&ouml;sung angefeuchtetes Handtuch soll das leitende K&ouml;rpergewebe
+                    simulieren. In der
                     Handtuchmitte wird mit einer Spannungsquelle ein elektrischer Dipol generiert. Mit Hilfe der an ein
-                    Spannungsmesser (Oszilloskop) angeschlossenen &quot;EKG-Elektroden&quot; A, B und C kann das erzeugte
+                    Spannungsmesser (Oszilloskop) angeschlossenen &quot;EKG-Elektroden&quot; A, B und C kann das
+                    erzeugte
                     elektrische Feld gemessen werden. Jedes Paar von Elektroden definiert eine Ableitungsrichtung, die
                     entsprechend auf dem
                     Oszilloskop dargestellt wird. F&uuml;r weitere theoretische Grundlagen wird hier auf das Arbeitsheft
@@ -90,10 +101,12 @@
                         <i class="bi-eye ms-3" style="font-size: 1.8rem"></i>
                         <div>
                             <h6 class="mb-0">Komponenten anzeigen/verstecken</h6>
-                            Alle Komponenten auf dem Handtuch können mit einem Klick sichtbar/unsichtbar gemacht werden.
+                            Alle Komponenten auf dem Handtuch k&ouml;nnen mit einem Klick sichtbar/unsichtbar gemacht
+                            werden.
                             Ihre Position &auml;ndert sich dadurch nicht. &Uuml;bung: Verstecke alle Komponenten außer
-                            den Projektionen des Dipol-Vektors. Platziere den Plus-Pol zufällig mit dem Button <span
-                                class="badge bg-primary">Plus-Pol zufällig plazieren</span>. Probiere nun, auf die Größe
+                            den Projektionen des Dipol-Vektors. Platziere den Plus-Pol zuf&auml;llig mit dem Button
+                            <span class="badge bg-primary">Plus-Pol zuf&auml;llig plazieren</span>. Probiere nun, auf
+                            die Gr&ouml;ße
                             und Richtung des Dipol-Vektors zu schließen.
                         </div>
                     </li>
@@ -109,8 +122,17 @@
                 <ul class="list-unstyled">
                     <li>*Physiologisches Institut Freiburg, Abteilung Physiologie II.</li>
                 </ul>
-                in Anlehnung an das Skript zum Physiologischen Praktikum. Diese Seite sowie das Skript sind durch
-                Urheberrechte gesch&uuml;tzt. Eine Verfielf&auml;ltigung ist nicht erlaubt.
+                in Anlehnung an das Skript zum Physiologischen Praktikum der Albert-Ludwigs-Universit&auml;t Freiburg.
+                </p>
+                <p>
+                    Dieses Programm ist Freie Software: Sie k&ouml;nnen es unter den Bedingungen der GNU General Public
+                    License, wie von der Free Software Foundation, Version 3 der Lizenz oder (nach Ihrer Wahl) jeder
+                    neueren ver&ouml;ffentlichten Version, weiter verteilen und/oder modifizieren.
+                    Der Quellcode ist auf <a href="https://github.com/phys2/teaching-ecg-towel">GitHub</a>
+                    verf&uuml;gbar.
+                </p>
+                <p>
+                    Das Skript ist durch Urheberrechte gesch&uuml;tzt. Eine Vervielf&auml;ltigung ist nicht erlaubt.
                 </p>
             </div>
         </div>
@@ -124,7 +146,7 @@
                 </div>
             </div>
             <div class="row g-3">
-                <div class="col-lg-10">
+                <div class="col-12 col-lg-10">
                     <div id="screen" class="ratio ratio-16x9">
                         <canvas id="mainCanvas"></canvas>
                         <img src="electrodeB.svg" id="electrode1" class="drag-image electrode"
@@ -138,7 +160,7 @@
                     </div>
 
                 </div>
-                <div class="col-lg-2">
+                <div class="col-12 col-lg-2 order-3 order-lg-1">
                     <div class="row p-1">
                         <div class="card p-0">
                             <div class="card-header">
@@ -166,7 +188,7 @@
                                     <label class="form-check-label" for="flexSwitchCheckChecked">Stromquelle</label>
                                 </div>
                                 <div class="form-check form-switch">
-                                    <input class="form-check-input" type="checkbox" id="cabrera" 
+                                    <input class="form-check-input" type="checkbox" id="cabrera"
                                         onclick="updateCanvas()">
                                     <label class="form-check-label" for="flexSwitchCheckChecked">Cabrerakreis</label>
                                 </div>
@@ -215,9 +237,8 @@
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="row gy-3 p-0 mt-2">
-                <div class="col-lg-6">
+
+                <div class="col-12 col-lg-6 order-2 order-lg-2">
                     <div class="card">
                         <div class="card-header">
                             <i class="bi-rulers"></i> geometrische Projektionen des Dipol-Vektors messen:
@@ -251,7 +272,7 @@
                             <i class="bi-geo-alt"></i> Pole der Stromquelle konstruieren:
                         </div>
                         <div class="card-body">
-                            <p>Zielgrößen für die Projektionen des Dipol-Vektors:</p>
+                            <p>Zielgr&ouml;ßen f&uuml;r die Projektionen des Dipol-Vektors:</p>
                             <div class="input-group mb-3">
                                 <button class="btn btn-outline-secondary dropdown-toggle" type="button"
                                     data-bs-toggle="dropdown" id="abltSelector0" data-selected="0">Ableitung&nbsp;<span
@@ -301,12 +322,12 @@
                             <hr>
                             <button type="button" class="btn btn-primary" onclick="placeRandomly()"><i
                                     class="bi-shuffle"></i> Plus-Pol
-                                zufällig plazieren</button>
+                                zuf&auml;llig plazieren</button>
                         </div>
                     </div>
 
                 </div>
-                <div class="col-lg-6">
+                <div class="col-12 col-lg-6 order-1 order-lg-3">
                     <div class="card">
                         <div class="card-header">
                             <i class="bi-speedometer2"></i> Oszilloskop (Spannungsmesser/&quot;EKG-Ger&auml;t&quot;):
@@ -340,11 +361,150 @@
             </div>
         </div>
     </div>
+    <div class="modal fade" id="impressumModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Impressum und Datenschutz</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Kontakt</h6>
+
+                    Physiologisches Institut<br>
+                    Prof. Dr. Bernd Fakler<br>
+                    Telefon [++49] 0761 / 203 - 5176<br>
+                    Fax [++49] 0761 / 203 - 5191<br>
+                    carmen.herr@physiologie.uni-freiburg.de<br>
+                    Hermann-Herder-Str. 7<br>
+                    79104 Freiburg<br>
+                    Deutschland<br>
+                    <br>
+                    Das Physiologische Institut ist Teil der Albert-Ludwigs-Universit&auml;t Freiburg.<br>
+                    <br>
+                    Albert-Ludwigs-Universit&auml;t Freiburg<br>
+                    Friedrichstraße 39<br>
+                    79098 Freiburg<br>
+                    Telefon: [++49] 0761 / 203 – 0<br>
+                    Fax: [++49] 0761 / 203 – 4369<br>
+                    info@uni-freiburg.de<br>
+                    https://uni-freiburg.de<br>
+                    <br>
+                    <h6>Rechtsform und gesetzliche Vertretung</h6>
+                    Die Universit&auml;t Freiburg ist eine K&ouml;rperschaft des &ouml;ffentlichen Rechts. Sie wird
+                    durch die Rektorin
+                    Prof. Dr. Kerstin Krieglstein gesetzlich vertreten.<br>
+                    <br>
+                    <h6>Zust&auml;ndige Aufsichtsbeh&ouml;rde</h6>
+                    Ministerium f&uuml;r Wissenschaft, Forschung und Kunst Baden-W&uuml;rttemberg
+                    K&ouml;nigstraße 46, 70173 Stuttgart<br>
+                    <br>
+                    <h6>Umsatzsteuer-ID-Nummer</h6>
+                    DE 142116817<br>
+                    <br>
+                    <h6>EORI-Nummer</h6>
+                    DE1112988<br>
+                    <br>
+                    <h6>Haftungsausschluss bei eigenen Inhalten</h6>
+                    Die Inhalte dieser Website werden mit gr&ouml;ßtm&ouml;glicher Sorgfalt recherchiert und
+                    implementiert. Fehler
+                    im Bearbeitungsvorgang sind dennoch nicht auszuschließen. Hinweise und Korrekturen senden Sie bitte
+                    an webmaster@uni-freiburg.de.<br>
+                    Eine Haftung f&uuml;r die Richtigkeit, Vollst&auml;ndigkeit und Aktualit&auml;t dieser Webseiten
+                    kann trotz
+                    sorgf&auml;ltiger Pr&uuml;fung nicht &uuml;bernommen werden. Die Universit&auml;t Freiburg
+                    &uuml;bernimmt insbesondere
+                    keinerlei Haftung, f&uuml;r eventuelle Sch&auml;den oder Konsequenzen, die durch die direkte oder
+                    indirekte
+                    Nutzung der angebotenen Inhalte entstehen.<br>
+                    <br>
+                    <h6>Haftungsausschluss bei Querverweisen und Links</h6>
+                    Die Universit&auml;t Freiburg ist als Inhaltsanbieter f&uuml;r die eigenen Inhalte, die es zur
+                    Nutzung
+                    bereith&auml;lt, nach den allgemeinen Gesetzen verantwortlich. Von diesen eigenen Inhalten sind
+                    Querverweise auf die von anderen Anbietern bereitgehaltenen Inhalte zu unterscheiden. Diese fremden
+                    Inhalte stammen weder von der Universit&auml;t Freiburg, noch hat die Universit&auml;t Freiburg die
+                    M&ouml;glichkeit, den Inhalt von Seiten Dritter zu beeinflussen. Die Inhalte fremder Seiten, auf die
+                    die
+                    Universit&auml;t Freiburg mittels Links hinweist, spiegeln nicht die Meinung der Universit&auml;t
+                    Freiburg
+                    wieder, sondern dienen lediglich der Information und der Darstellung von Zusammenh&auml;ngen.
+                    Diese Feststellungen gelten f&uuml;r alle innerhalb des eigenen Internetangebotes gesetzten Links
+                    und
+                    Verweise sowie f&uuml;r Fremdeintr&auml;ge in von der Universit&auml;t Freiburg eingerichteten
+                    G&auml;steb&uuml;chern,
+                    Diskussionsforen und Mailinglisten. F&uuml;r illegale, fehlerhafte oder unvollst&auml;ndige Inhalte
+                    und
+                    insbesondere f&uuml;r Sch&auml;den, die aus der Nutzung oder Nichtnutzung solcherart dargebotener
+                    Informationen entstehen, haftet allein der Anbieter der Seite, auf welche verwiesen wurde.<br>
+                    <br>
+                    <h5>Datenschutzerkl&auml;rung</h5>
+                    <p>Verantwortlicher im Sinne der Datenschutzgesetze, insbesondere der EU-Datenschutzgrundverordnung
+                        (DSGVO), ist: Prof. Dr. Bernd Fakler.</p>
+                    <p></p>
+                    <h6>Ihre Betroffenenrechte</h6>
+                    <p>Unter den angegebenen Kontaktdaten unseres Datenschutzbeauftragten k&ouml;nnen Sie jederzeit folgende
+                        Rechte aus&uuml;ben:</p>
+                    <ul>
+                        <li>Auskunft &uuml;ber Ihre bei uns gespeicherten Daten und deren Verarbeitung (Art. 15 DSGVO),</li>
+                        <li>Berichtigung unrichtiger personenbezogener Daten (Art. 16 DSGVO),</li>
+                        <li>L&ouml;schung Ihrer bei uns gespeicherten Daten (Art. 17 DSGVO),</li>
+                        <li>Einschr&auml;nkung der Datenverarbeitung, sofern wir Ihre Daten aufgrund gesetzlicher Pflichten
+                            noch nicht l&ouml;schen d&uuml;rfen (Art. 18 DSGVO),</li>
+                        <li>Widerspruch gegen die Verarbeitung Ihrer Daten bei uns (Art. 21 DSGVO) und</li>
+                        <li>Daten&uuml;bertragbarkeit, sofern Sie in die Datenverarbeitung eingewilligt haben oder einen
+                            Vertrag mit uns abgeschlossen haben (Art. 20 DSGVO).</li>
+                    </ul>
+                    <p>Sofern Sie uns eine Einwilligung erteilt haben, k&ouml;nnen Sie diese jederzeit mit Wirkung f&uuml;r die
+                        Zukunft widerrufen.</p>
+                    <p>Sie k&ouml;nnen sich jederzeit mit einer Beschwerde an eine Aufsichtsbeh&ouml;rde wenden, z. B. an die
+                        zust&auml;ndige Aufsichtsbeh&ouml;rde des Bundeslands Ihres Wohnsitzes oder an die f&uuml;r uns als
+                        verantwortliche Stelle zust&auml;ndige Beh&ouml;rde.</p>
+                    <p>Eine Liste der Aufsichtsbeh&ouml;rden (f&uuml;r den nicht&ouml;ffentlichen Bereich) mit Anschrift finden Sie
+                        unter: <a href="https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html"
+                            target="_blank"
+                            rel="noopener nofollow">https://www.bfdi.bund.de/DE/Service/Anschriften/Laender/Laender-node.html</a>.
+                    </p>
+                    <h6>SSL-Verschl&uuml;sselung</h6>
+                    <p>Um die Sicherheit Ihrer Daten bei der &Uuml;bertragung zu sch&uuml;tzen, verwenden wir dem aktuellen Stand
+                        der Technik entsprechende Verschl&uuml;sselungsverfahren (z. B. SSL) &uuml;ber HTTPS.</p>
+                                        
+                    <h6>Information &uuml;ber Ihr Widerspruchsrecht nach Art. 21 DSGVO</h6>
+                    Einzelfallbezogenes Widerspruchsrecht:<br>
+                    <p>Sie haben das Recht, aus Gr&uuml;nden, die sich aus Ihrer besonderen Situation ergeben, jederzeit
+                        gegen die Verarbeitung Sie betreffender personenbezogener Daten, die aufgrund Art. 6 Abs. 1 lit.
+                        f DSGVO (Datenverarbeitung auf der Grundlage einer Interessenabw&auml;gung) erfolgt, Widerspruch
+                        einzulegen; dies gilt auch f&uuml;r ein auf diese Bestimmung gest&uuml;tztes Profiling im Sinne von Art. 4
+                        Nr. 4 DSGVO.</p>
+                    <p>Legen Sie Widerspruch ein, werden wir Ihre personenbezogenen Daten nicht mehr verarbeiten, es sei
+                        denn, wir k&ouml;nnen zwingende schutzw&uuml;rdige Gr&uuml;nde f&uuml;r die Verarbeitung nachweisen, die Ihre
+                        Interessen, Rechte und Freiheiten &uuml;berwiegen, oder die Verarbeitung dient der Geltendmachung,
+                        Aus&uuml;bung oder Verteidigung von Rechtsanspr&uuml;chen.</p>
+                    Empf&auml;nger eines Widerspruchs: Prof. Dr. Bernd Fakler.<br>
+                    <br>
+                    <h6>&Auml;nderung unserer Datenschutzbestimmungen</h6>
+                    <p>Wir behalten uns vor, diese Datenschutzerkl&auml;rung anzupassen, damit sie stets den aktuellen
+                        rechtlichen Anforderungen entspricht oder um &Auml;nderungen unserer Leistungen in der
+                        Datenschutzerkl&auml;rung umzusetzen, z.B. bei der Einf&uuml;hrung neuer Services. F&uuml;r Ihren erneuten
+                        Besuch gilt dann die neue Datenschutzerkl&auml;rung.</p>
+                    <h6>Fragen an den Datenschutzbeauftragten</h6>
+                    <p>Wenn Sie Fragen zum Datenschutz haben, schreiben Sie uns bitte eine E-Mail oder wenden Sie sich
+                        direkt an die f&uuml;r den Datenschutz verantwortliche Person in unserer Organisation.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <footer class="footer mt-auto py-3 bg-light">
         <div class="d-flex justify-content-center">
-            <span class="text-muted">&copy 2021 <a class="link-dark text-decoration-none"
-                    href="https://www.physiologie.uni-freiburg.de">Institut für Physiologie</a>,
-                Albert-Ludwigs-Universität Freiburg.</span>
+            <span class="text-muted">&copy 2021 Pierre Kreins & <a class="link-dark text-decoration-none"
+                    href="https://www.physiologie.uni-freiburg.de">Physiologisches Institut</a>,
+                Albert-Ludwigs-Universit&auml;t Freiburg.&nbsp;
+            </span><a class="link-dark text-decoration-none" data-bs-toggle="modal"
+                href="#impressumModal">Impressum & Datenschutz</a>.
         </div>
     </footer>
 </body>
