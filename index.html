@@ -1,3 +1,17 @@
+<!-- Copyright (C) 2021 Pierre Kreins  
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.  -->
 <!DOCTYPE html>
 <html lang="de">
 
@@ -22,10 +36,9 @@
 
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="icon" type="image/png" href="favicon.svg">
     <link rel="manifest" href="site.webmanifest">
     <link rel="mask-icon" href="safari-pinned-tab.svg" color="#004a99">
-    <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
 </head>
 
@@ -149,14 +162,14 @@
                 <div class="col-12 col-lg-10">
                     <div id="screen" class="ratio ratio-16x9">
                         <canvas id="mainCanvas"></canvas>
-                        <img src="electrodeB.svg" id="electrode1" class="drag-image electrode"
+                        <img src="ressources/electrodeB.svg" id="electrode1" class="drag-image electrode"
                             title="EKG-Elektrode B" />
-                        <img src="electrodeA.svg" id="electrode2" class="drag-image electrode"
+                        <img src="ressources/electrodeA.svg" id="electrode2" class="drag-image electrode"
                             title="EKG-Elektrode A" />
-                        <img src="electrodeC.svg" id="electrode3" class="drag-image electrode"
+                        <img src="ressources/electrodeC.svg" id="electrode3" class="drag-image electrode"
                             title="EKG-Elektrode C" />
-                        <img src="plus.svg" id="plus" class="drag-image source" title="Plus-Pol der Stromquelle" />
-                        <img src="minus.svg" id="minus" class="drag-image source" title="Minus-Pol der Stromquelle" />
+                        <img src="ressources/plus.svg" id="plus" class="drag-image source" title="Plus-Pol der Stromquelle" />
+                        <img src="ressources/minus.svg" id="minus" class="drag-image source" title="Minus-Pol der Stromquelle" />
                     </div>
 
                 </div>
@@ -362,7 +375,7 @@
         </div>
     </div>
     <div class="modal fade" id="impressumModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Impressum und Datenschutz</h5>
